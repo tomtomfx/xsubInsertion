@@ -5,7 +5,9 @@ libfreetype6
 libfreetype6-dev
 
  - Compilation
-cmake -DCMAKE_INSTALL_PREFIX=bin/ 
+mkdir build
+cd build/
+cmake ../. -DCMAKE_INSTALL_PREFIX=bin/ 
 make
 make install
 
