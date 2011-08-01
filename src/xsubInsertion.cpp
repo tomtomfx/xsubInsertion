@@ -42,7 +42,7 @@ int main(int argc, char **argv)
     short width = 0;
     short height = 0;
     
-    printf("Addxsub version %d.%d.%d\n", ADDXSUB_MAJOR, ADDXSUB_MINOR, ADDXSUB_MAJOR);
+    printf("XsubInsertion version %d.%d.%d\n", XSUB_INSERTION_MAJOR, XSUB_INSERTION_MINOR, XSUB_INSERTION_MAJOR);
     
     if (argc != 4)
     {
@@ -74,7 +74,7 @@ int main(int argc, char **argv)
 	printf("Cannot create log file\n");
 	return 1;
     }
-    log->initFileLog(argv[2], ADDXSUB_MAJOR, ADDXSUB_MINOR, ADDXSUB_PATCH);
+    log->initFileLog(argv[2], XSUB_INSERTION_MAJOR, XSUB_INSERTION_MINOR, XSUB_INSERTION_PATCH);
     
     // Create avi object to demux and remux with subtitle
     aviMuxer = new avi(argv[2], argv[3], &width, &height, log);
