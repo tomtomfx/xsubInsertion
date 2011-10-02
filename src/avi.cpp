@@ -18,6 +18,7 @@
 */
 #include "avi.h"
 #include "SubtitleEncoder.h"
+#include <stdio.h>
 
 avi::avi(char* filenameIn, char* filenameOut, short* width, short* height, logger* log)
 {
@@ -87,6 +88,8 @@ void avi::Remux(Subtitle* txtSub, SubtitleEncoder* subEnc, int nbSubtitles)
     // Indexes management
     // Find the idx1 flag in the file (search from the end)
     findIdxPos();
+    //printf("Idx found\n");
+    
     // Read idx1 tag and size of all indexes
     // These datas will be written in the end of remux
     // idx1
@@ -98,6 +101,7 @@ void avi::Remux(Subtitle* txtSub, SubtitleEncoder* subEnc, int nbSubtitles)
     fgetpos(m_aviFileIn, &m_indexPos);
     // Save all indexes in a table
     SaveAllIndexes();
+    
     // Read every chunk and write them to output file
     bytesWritten = writeChunks(txtSub, subEnc);
     // Write all indexes to output file

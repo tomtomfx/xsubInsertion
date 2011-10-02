@@ -84,7 +84,7 @@ void Subtitle::ComputeNumberOfSubtitles()
 	{
 	    continue;
 	}
-        if ( value > m_subNumber && previousWasBlank/*!strcmp(line, comparison)*/)
+        if ( /*value > m_subNumber && */ previousWasBlank/*!strcmp(line, comparison)*/)
         {
             m_subNumber++;
 	    previousWasBlank = 0;

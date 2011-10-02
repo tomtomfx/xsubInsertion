@@ -114,7 +114,6 @@ int main(int argc, char **argv)
     // Once we have transcoded the subtitles insert them in the avi file
     // re-Mux avi input file to output adding xsubs
     aviMuxer->Remux(txtSubs, subEnc, nbSubtitles);
-
     log->closeFileLog();
     
     if (txtSubs != NULL)
